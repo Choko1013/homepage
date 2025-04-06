@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ホームページ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+	#title {
+		margin-left : -20px;
+		}
+	#hobbies {
+   		 margin-left: -50px; 
+		}
+        #datetime {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #eee;
+        }
+        section {
+            margin-top: 30px;
+        }
+        footer {
+            margin-top: 50px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        ようこそ、ホームページへ！
+        <div id="datetime"></div>
+    </header>
+
+    <section id="title">
+        <h1>自己紹介</h1>
+    </section>
+
+    <section id="hobbies">
+        <h2>趣味</h2>
+        <ul>
+            <li>ゲーム</li>
+            <li>睡眠</li>
+            <li>犬と遊ぶこと</li>
+        </ul>
+    </section>
+
+    <footer>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const formatted = now.toLocaleString('ja-JP', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('datetime').textContent = '現在の日時: ' + formatted;
+        }
+
+        //毎秒更新
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
